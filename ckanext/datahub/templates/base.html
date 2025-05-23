@@ -5,3 +5,15 @@
     {% resource 'ckanext-datahub/styles/datahub.css' %}
 {% endblock %}
 
+{# Add GA into the head of every page #}
+{% block extra_head %}
+  {{ super() }}
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MPY2PQG2J4"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-MPY2PQG2J4');
+  </script>
+{% endblock %}
